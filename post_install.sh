@@ -1,5 +1,5 @@
 #modification du hostname
-echo "esgi" > /etc/hostname
+echo "wiki" > /etc/hostname
 
 #modification du hosts pour le domain
 #sed -i 's/old_word/new_word'
