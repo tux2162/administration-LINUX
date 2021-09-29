@@ -60,7 +60,7 @@ mkdir /home/esgi/COFFRE
 mkfs.btrfs  /dev/mapper/COFFRE
 mount -v /dev/mapper/NomLVChiffré home/esgi/COFFRE
 
-
+sleep 2
 
 ### Mettre en place la configuration réseau statique 
 # A FAIRE !!!!!
