@@ -22,6 +22,12 @@ echo "server 0.fr.pool.ntp.org iburst" >> /etc/chrony/chrony.conf
 echo "server 1.fr.pool.ntp.org iburst" >> /etc/chrony/chrony.conf
 echo "server 2.fr.pool.ntp.org iburst" >> /etc/chrony/chrony.conf
 echo "server 3.fr.pool.ntp.org iburst" >> /etc/chrony/chrony.conf
+# Config du prof
+# echo "Synchronisation horaire";echo
+##ntpdate pool.ntp.org
+# timedatectl set-ntp on
+# systemctl restart systemd-timesyncd
+# systemctl status systemd-tymesyncd
 
 ### Mettre en place la configuration réseau statique 
 # A FAIRE !!!!!
