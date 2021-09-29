@@ -1,5 +1,9 @@
 #!/bin/bash
+<<<<<<< HEAD
 #test
+=======
+#set -e
+>>>>>>> 98ae7e8e6476c3ea3be2061bbff2c01f8ad20e9e
 
 ### Supprimer tous les packages inutiles installés au départ
 sudo apt autoremove --purge
