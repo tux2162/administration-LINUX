@@ -1,12 +1,16 @@
 #!/bin/bash
 
+
+apt install sudo -y
+
+
 ### Supprimer tous les packages inutiles installés au départ
 sudo apt autoremove --purge
 sudo apt remove -y telnet
 sudo apt remove -y task-laptop
 
 ### Installer tous les packages utiles sur sur un serveur de prod
-apt install vim rsync screen mlocate htop cryptsetup net-tools git tree gnupg2 mc psmisc lynx curl git pigz pixz zip ncdu iptraf iotop dstat gdisk mc cifs-utils ntfs-3g sshfs gdisk lshw inxi figlet screenfetch php php-fpm nginx mariadb-server
+apt install vim rsync screen mlocate htop net-tools git tree gnupg2 mc psmisc lynx curl git cryptsetup pigz pixz zip ncdu iptraf iotop dstat gdisk mc cifs-utils ntfs-3g sshfs gdisk lshw inxi figlet screenfetch php php-fpm nginx mariadb-server -y
 ### Générer automatiquement les clés ED25519
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_root -C root
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_esgi -C esgi
