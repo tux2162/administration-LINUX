@@ -27,7 +27,7 @@ echo "server 3.fr.pool.ntp.org iburst" >> /etc/chrony/chrony.conf
 ##ntpdate pool.ntp.org
 # timedatectl set-ntp on
 # systemctl restart systemd-timesyncd
-# systemctl status systemd-tymesyncd
+# systemctl status systemd-tymesyncd --no-pager
 
 ### Mettre en place la configuration réseau statique 
 # A FAIRE !!!!!
