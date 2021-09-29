@@ -3,7 +3,9 @@
 
 apt install sudo -y
 sudo apt install figlet
+clear
 
+sleep 2
 figlet Suppression des packages inutiles
 ### Supprimer tous les packages inutiles installés au départ
 sudo apt autoremove --purge
