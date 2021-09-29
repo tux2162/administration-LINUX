@@ -31,6 +31,7 @@ echo "server 3.fr.pool.ntp.org iburst" >> /etc/chrony/chrony.conf
 # systemctl status systemd-tymesyncd --no-pager
 
 #COFFRE
+#mot de passe du coffre = YES
 lvcreate -L 2GB -n lv_coffre VGCRYPT
 echo -e 'YES\n' |cryptsetup luksFormat /dev/VGCRYPT/lv_coffre
 
@@ -58,14 +59,6 @@ echo "alias cp='cp -iv'" >> /root/.bashrc
 echo "alias ll='ls -rtl --color'" >> /root/.bashrc
 echo "alias lla='ll -a'" >> /root/.bashrc
 echo "alias grep='grep --color=auto'" >> /root/.bashrc
-echo "alias l='ls -CF'" >> /root/.bashrc
-echo "alias em='emacs -nw'" >> /root/.bashrc
-echo "alias dd='dd status=progress" >> /root/.bashrc
-echo "alias dir='dir --color=auto'" >> /root/.bashrc
-echo "alias vdir='vdir --color=auto'" >> /root/.bashrc
-echo "alias grep='grep --color=auto'" >> /root/.bashrc
-echo "alias fgrep='fgrep --color=auto'" >> /root/.bashrc
-echo "alias egrep='egrep --color=auto'" >> /root/.bashrc
 
 # Chargement de la modification
 source /root/.bashrc
@@ -84,15 +77,6 @@ echo "alias cp='cp -iv'" >> ~/.bashrc
 echo "alias ll='ls -rtl --color'" >> ~/.bashrc
 echo "alias lla='ll -a'" >> ~/.bashrc
 echo "alias grep='grep --color=auto'" >> ~/.bashrc
-echo "alias l='ls -CF'" >> ~/.bashrc
-echo "alias em='emacs -nw'" >> ~/.bashrc
-echo "alias dd='dd status=progress" >> ~/.bashrc
-echo "alias dir='dir --color=auto'" >> ~/.bashrc
-echo "alias vdir='vdir --color=auto'" >> ~/.bashrc
-echo "alias grep='grep --color=auto'" >> ~/.bashrc
-echo "alias fgrep='fgrep --color=auto'" >> ~/.bashrc
-echo "alias egrep='egrep --color=auto'" >> ~/.bashrc
-
 
 # Chargement de la modification
 source ~/.bashrc
