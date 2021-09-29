@@ -18,6 +18,10 @@ ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_davy -C davy
 ### Synchronisation horaire
 apt-get install chrony -y
 systemctl status chronyd
+echo "server 0.fr.pool.ntp.org iburst" >> /etc/chrony/chrony.conf
+echo "server 1.fr.pool.ntp.org iburst" >> /etc/chrony/chrony.conf
+echo "server 2.fr.pool.ntp.org iburst" >> /etc/chrony/chrony.conf
+echo "server 3.fr.pool.ntp.org iburst" >> /etc/chrony/chrony.conf
 
 ### Mettre en place la configuration réseau statique 
 # A FAIRE !!!!!
