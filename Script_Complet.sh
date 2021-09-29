@@ -50,6 +50,7 @@ echo "server 3.fr.pool.ntp.org iburst" >> /etc/chrony/chrony.conf
 sleep 2
 clear
 
+figlet Creation du coffre
 #COFFRE
 #mot de passe du coffre = YES
 lvcreate -L 2GB -n lv_coffre VGCRYPT
@@ -115,7 +116,7 @@ source ~/.bashrc
 sleep 2
 clear
 
-figlet Passage en résolution 1920x1080
+figlet Changement de la resolution
 
 # Modification de la résolution
 sed -i s/#GRUB_GFXMODE=640x480/GRUB_GFXMODE=1920x1080/g /etc/default/grub
