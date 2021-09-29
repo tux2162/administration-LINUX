@@ -1,6 +1,6 @@
 # Modification du prompt
 echo "PS1='\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\n\[\e[0;93m\]\u\[\e[0m\]@\[\e[0;91m\]\h\n\[\e[0;38;5;246m\]\d\[\e[0m\] - \[\e[0;38;5;245m\]\t\n\[\e[0m\]Répertoire de travail : \[\e[0m\]\w\n\[\e[0m\]Version Bash : \[\e[0m\]\v\n\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\[\e[0m\]#\n\[\e[0m\]\W\[\e[0m\] \[\e[0m\]>\[\e[0m\] \[\e[0m\]'" >> ~/.bashrc
-
+#test
 # Création d'alias
 echo 'alias umount="umount -flu"' >> ~/.bashrc
 echo "alias chmod='chmod -v --preserve-root'" >> ~/.bashrc

@@ -1,4 +1,5 @@
 # Création du mdp, modifier "root\nroot" par le password souhaité
+#test
 mdp=$(echo -e 'root\nroot' |grub-mkpasswd-pbkdf2|grep hachage|cut -d" " -f9)
 
 # Modification du fichier, modifier "root" par le nom d'utilisateur souhaité

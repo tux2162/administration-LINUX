@@ -10,3 +10,6 @@ variable = $(hostname -f)
 sed -i 's/$variable/esgi.local/g' /etc/hosts
 #modification du domainame
 sed -i 's/localdomain/wiki.esgi.local/g' /etc/resolv.conf
+
+#modification de dynamique à statique
+

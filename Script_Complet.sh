@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#test
 set -e
 
 ### Supprimer tous les packages inutiles installés au départ
