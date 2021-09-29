@@ -1,6 +1,5 @@
 #!/bin/bash
 #test
-set -e
 
 ### Supprimer tous les packages inutiles installés au départ
 sudo apt autoremove --purge
@@ -8,7 +7,7 @@ sudo apt remove -y telnet
 sudo apt remove -y task-laptop
 
 ### Installer tous les packages utiles sur sur un serveur de prod
-apt install vim rsync screen mlocate htop net-tools git update-grub tree gnupg2 mc psmisc lynx curl git pigz pixz zip ncdu iptraf iotop dstat gdisk mc cifs-utils ntfs-3g sshfs gdisk lshw inxi figlet screenfetch
+apt install -y vim rsync screen mlocate htop net-tools git tree gnupg2 mc psmisc lynx curl git pigz pixz zip ncdu iptraf iotop dstat gdisk mc cifs-utils ntfs-3g sshfs gdisk lshw inxi figlet screenfetch
 
 ### Générer automatiquement les clés ED25519
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_root -C root
@@ -28,6 +27,10 @@ echo "server 3.fr.pool.ntp.org iburst" >> /etc/chrony/chrony.conf
 # timedatectl set-ntp on
 # systemctl restart systemd-timesyncd
 # systemctl status systemd-tymesyncd --no-pager
+
+#COFFRE
+lvcreate -L 2GB -n lv_coffre VGCRYPT
+echo -e 'YES\n' |cryptsetup luksFormat /dev/VGCRYPT/lv_coffre
 
 ### Mettre en place la configuration réseau statique 
 # A FAIRE !!!!!
