@@ -59,7 +59,7 @@ echo -e 'YES\n' |cryptsetup luksFormat /dev/VGCRYPT/lv_coffre
 echo -e 'YES\n' |cryptsetup luksOpen /dev/VGCRYPT/lv_coffre COFFRE
 mkdir /home/esgi/COFFRE
 mkfs.btrfs  /dev/mapper/COFFRE
-mount -v /dev/mapper/COFFRE home/esgi/COFFRE
+mount -v /dev/mapper/COFFRE /home/esgi/COFFRE
 
 sleep 2
 
