@@ -10,7 +10,7 @@ sudo apt remove -y telnet
 sudo apt remove -y task-laptop
 
 ### Installer tous les packages utiles sur sur un serveur de prod
-apt install vim rsync screen mlocate htop net-tools git tree gnupg2 mc psmisc lynx curl git cryptsetup pigz pixz zip ncdu iptraf iotop dstat gdisk mc cifs-utils ntfs-3g sshfs gdisk lshw inxi figlet screenfetch php php-fpm nginx mariadb-server -y
+apt install vim rsync screen mlocate btrfs-progs htop net-tools git tree gnupg2 mc psmisc lynx curl git cryptsetup pigz pixz zip ncdu iptraf iotop dstat gdisk mc cifs-utils ntfs-3g sshfs gdisk lshw inxi figlet screenfetch php php-fpm nginx mariadb-server -y
 ### Générer automatiquement les clés ED25519
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_root -C root
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_esgi -C esgi
@@ -34,6 +34,12 @@ echo "server 3.fr.pool.ntp.org iburst" >> /etc/chrony/chrony.conf
 #mot de passe du coffre = YES
 lvcreate -L 2GB -n lv_coffre VGCRYPT
 echo -e 'YES\n' |cryptsetup luksFormat /dev/VGCRYPT/lv_coffre
+echo -e 'YES\n' |cryptsetup luksOpen /dev/VGCRYPT/lv_coffre COFFRE
+mkdir /home/esgi/COFFRE
+mkfs.btrfs  /dev/mapper/COFFRE
+mount -v /dev/mapper/NomLVChiffré home/esgi/COFFRE
+
+
 
 ### Mettre en place la configuration réseau statique 
 # A FAIRE !!!!!
