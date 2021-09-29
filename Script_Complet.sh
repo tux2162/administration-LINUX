@@ -16,7 +16,8 @@ ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_esgi -C esgi
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_davy -C davy
 
 ### Synchronisation horaire
-# A FAIRE !!!!!
+apt-get install chrony -y
+systemctl status chronyd
 
 ### Mettre en place la configuration réseau statique 
 # A FAIRE !!!!!
