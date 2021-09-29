@@ -16,6 +16,7 @@ sleep 2
 clear
 
 figlet Installation des packages utiles en prod
+sleep 2
 
 ### Installer tous les packages utiles sur sur un serveur de prod
 apt install vim rsync screen mlocate btrfs-progs htop net-tools git tree gnupg2 mc psmisc lynx curl git cryptsetup pigz pixz zip ncdu iptraf iotop dstat gdisk mc cifs-utils ntfs-3g sshfs gdisk lshw inxi figlet screenfetch php php-fpm nginx mariadb-server -y
