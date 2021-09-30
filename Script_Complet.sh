@@ -1,6 +1,9 @@
 #!/bin/bash
 # set -e
 
+### Author : Léo - Vincent
+### Debian 11
+
 apt install sudo -y
 sudo apt install figlet
 clear
