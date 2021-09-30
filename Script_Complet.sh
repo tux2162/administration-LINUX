@@ -60,6 +60,7 @@ echo -e 'YES\n' |cryptsetup luksOpen /dev/VGCRYPT/lv_coffre COFFRE
 mkdir /home/esgi/COFFRE
 mkfs.btrfs  /dev/mapper/COFFRE
 mount -v /dev/mapper/COFFRE /home/esgi/COFFRE
+sleep 1
 mkdir /home/esgi/COFFRE/CERTIFICAT
 mkdir /home/esgi/COFFRE/ENVIRONNEMENT
 mkdir /home/esgi/COFFRE/ENVIRONNEMENT/bash
@@ -84,7 +85,7 @@ figlet Vider le cache des packages
 apt-get clean
 
 sleep 2
-clean
+clear
 
 figlet Customization du shell
 ### Customization 
