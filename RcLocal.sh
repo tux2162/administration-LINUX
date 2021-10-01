@@ -11,7 +11,9 @@ cat <<EOF >/etc/rc.local
 # bits.
 #
 # By default this script does nothing.
-# >>> Ajout des instructions ici <<<
+
+echo -e 'YES\n' |cryptsetup luksOpen /dev/VGCRYPT/lv_coffre COFFRE
+mount -v /dev/mapper/COFFRE /home/esgi/COFFRE
 exit 0
 
 EOF
