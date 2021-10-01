@@ -75,6 +75,7 @@ mkdir /home/esgi/COFFRE/SECURITE/fail2ban
 mkdir /home/esgi/COFFRE/SECURITE/firewall
 mkdir /home/esgi/COFFRE/SECURITE/supervision
 mkdir /home/esgi/COFFRE/SERVEUR
+cryptsetup luksClose /dev/mapper/COFFRE && umount -v /home/esgi/COFFRE
 sleep 2
 
 ### Mettre en place la configuration réseau statique 
