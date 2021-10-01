@@ -181,9 +181,33 @@ update-grub
 sleep 2
 clear
 
+Figlet Modification du fichier rc.local
+
+cat <<EOF >/etc/rc.local
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+echo -e 'YES\n' |cryptsetup luksOpen /dev/VGCRYPT/lv_coffre COFFRE
+mount -v /dev/mapper/COFFRE /home/esgi/COFFRE
+exit 0
+
+EOF
+chmod +x /etc/rc.local
+systemctl daemon-reload
+systemctl start rc-local
+systemctl status rc-local
+
 echo "Reboot dans 3 secondes"
 sleep 3
 reboot
-
-
 
