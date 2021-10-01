@@ -1,4 +1,5 @@
 #!bin/bash
+#test
 ##installation de Bootstack
 #miseEnplaceDeMariaDB
 apt install mariadb-server -y
