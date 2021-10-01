@@ -181,7 +181,7 @@ update-grub
 sleep 2
 clear
 
-Figlet Modification du fichier rc.local
+figlet Modification du fichier rc.local
 
 cat <<EOF >/etc/rc.local
 #!/bin/sh -e
