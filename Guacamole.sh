@@ -1,50 +1,33 @@
+# Installation des paquets nécessaires
 apt install -y build-essential libcairo2-dev libjpeg62-turbo-dev \
 libpng-dev libtool-bin libossp-uuid-dev libavutil-dev libswscale-dev \
 freerdp2-dev libpango1.0-dev libssh2-1-dev libvncserver-dev libtelnet-dev \
 libwebsockets-dev libssl-dev libvorbis-dev libwebp-dev libpulse-dev sudo vim
 
+# Téléchargement/installation guacamole server
 wget https://downloads.apache.org/guacamole/1.3.0/source/guacamole-server-1.3.0.tar.gz
-
 tar xzf guacamole-server-1.3.0.tar.gz
-
 cd guacamole-server-1.3.0
-
 ./configure --with-systemd-dir=/etc/systemd/system/
-
 make
-
 make install
-
 ldconfig
-
 systemctl daemon-reload
-
 systemctl enable --now guacd
-
 systemctl status guacd
 
 apt install tomcat9 tomcat9-admin tomcat9-common tomcat9-user -y
-
 apt install ufw
-
 ufw allow 8080/tcp
-
 mkdir /etc/guacamole
 
 wget https://downloads.apache.org/guacamole/1.3.0/binary/guacamole-1.3.0.war -O /etc/guacamole/guacamole.war
-
 ln -s /etc/guacamole/guacamole.war /var/lib/tomcat9/webapps/
-
 systemctl restart tomcat9 guacd
-
 mkdir /etc/guacamole/{extensions,lib}
-
 systemctl daemon-reload
-
 systemctl restart guacd
-
 echo "GUACAMOLE_HOME=/etc/guacamole" >> /etc/default/tomcat9
-
 cat > /etc/guacamole/guacamole.properties << EOL
 guacd-hostname: localhost
 guacd-port: 4822
@@ -53,7 +36,6 @@ auth-provider:  net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvi
 EOL
 
 ln -s /etc/guacamole /usr/share/tomcat9/.guacamole
-
 cat > /etc/guacamole/user-mapping.xml << EOL
 <user-mapping>
         
@@ -88,5 +70,4 @@ cat > /etc/guacamole/user-mapping.xml << EOL
 </user-mapping>
 
 EOL
-
 systemctl restart tomcat9 guacd
