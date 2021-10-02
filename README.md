@@ -1,4 +1,5 @@
 Script fonctionnel pour une Debian 11
+
 Auteur : Léo - Vincent
 
 Pour récuperer le projet: 
