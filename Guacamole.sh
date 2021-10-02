@@ -1,3 +1,10 @@
+### Script pour Debian 11 - Guacamole 1.3.0
+### Pensez à changer l'IP par celle de votre machine
+### Port par défault : 8080
+### Lien final : http://<IP>:<PORT>/Guacamole
+### Log par défaut : root:root
+### Auteur : Léo - Vincent
+
 # Installation des paquets nécessaires
 apt install -y build-essential libcairo2-dev libjpeg62-turbo-dev \
 libpng-dev libtool-bin libossp-uuid-dev libavutil-dev libswscale-dev \
@@ -17,6 +24,7 @@ systemctl enable --now guacd
 systemctl status guacd
 
 apt install tomcat9 tomcat9-admin tomcat9-common tomcat9-user -y
+
 apt install ufw -y
 ufw allow 8080/tcp
 mkdir /etc/guacamole
