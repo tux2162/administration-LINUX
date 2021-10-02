@@ -17,7 +17,7 @@ systemctl enable --now guacd
 systemctl status guacd
 
 apt install tomcat9 tomcat9-admin tomcat9-common tomcat9-user -y
-apt install ufw
+apt install ufw -y
 ufw allow 8080/tcp
 mkdir /etc/guacamole
 
