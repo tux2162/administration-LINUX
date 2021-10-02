@@ -1,4 +1,6 @@
-pour récuperer le projet: 
+Script fonctionnel pour une Debian 11
+
+Pour récuperer le projet: 
 
 ```bash
 git clone https://github.com/tux2162/administration-LINUX.git
