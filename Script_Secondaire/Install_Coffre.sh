@@ -1,4 +1,4 @@
-apt install cryptsetup btrfs-progs
+apt install cryptsetup btrfs-progs -y
 
 figlet Creation du coffre
 #COFFRE
@@ -27,7 +27,7 @@ fusermount -u /home/esgi/COFFRE
 cryptsetup luksClose /dev/mapper/COFFRE && umount -v /home/esgi/COFFRE
 
 
-figlet Modification du fichier rc.local
+#figlet Modification du fichier rc.local
 
 cat <<EOF >/etc/rc.local
 #!/bin/sh -e
@@ -43,12 +43,12 @@ cat <<EOF >/etc/rc.local
 #
 # By default this script does nothing.
 
-echo -e 'YES\n' |cryptsetup luksOpen /dev/VGCRYPT/lv_coffre COFFRE
-mount -v /dev/mapper/COFFRE /home/esgi/COFFRE
-exit 0
+#echo -e 'YES\n' |cryptsetup luksOpen /dev/VGCRYPT/lv_coffre COFFRE
+#mount -v /dev/mapper/COFFRE /home/esgi/COFFRE
+#exit 0
 
-EOF
-chmod +x /etc/rc.local
-systemctl daemon-reload
-systemctl start rc-local
-systemctl status rc-local
+#EOF
+#chmod +x /etc/rc.local
+#systemctl daemon-reload
+#systemctl start rc-local
+#systemctl status rc-local
