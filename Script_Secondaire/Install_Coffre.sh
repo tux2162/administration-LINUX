@@ -1,4 +1,4 @@
-apt install cryptsetup btrfs-progs
+apt  install vim cryptsetup btrfs-progs
 
 figlet Creation du coffre
 #COFFRE
@@ -20,11 +20,11 @@ mkdir /home/esgi/COFFRE/SECURITE
 mkdir /home/esgi/COFFRE/SECURITE/fail2ban
 mkdir /home/esgi/COFFRE/SECURITE/firewall
 mkdir /home/esgi/COFFRE/SECURITE/supervision
-mkdir /home/esgi/COFFRE/SERVEUR
+mkdir -p /home/esgi/COFFRE/SERVEUR/DEBIAN10/APPLIS
 sleep 2
 
 fusermount -u /home/esgi/COFFRE
-cryptsetup luksClose /dev/mapper/COFFRE && umount -v /home/esgi/COFFRE
+cryptsetup luksClose /dev/mapper/COFFRE
 
 
 figlet Modification du fichier rc.local
